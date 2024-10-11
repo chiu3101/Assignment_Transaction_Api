@@ -1,0 +1,160 @@
+/* Main container styling */
+.chart-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #edf2fb, #e0e7ff, #d4d7ed);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: background 0.4s ease;
+}
+
+.chart-container:hover {
+  background: linear-gradient(135deg, #e8f0fe, #f0f4ff, #dfe6f6);
+}
+
+/* Title styling */
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: black; /* Changed title color to black */
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Dropdown styling */
+.dropdown-container {
+  margin-bottom: 25px;
+}
+
+label {
+  font-size: 20px;
+  color: #57432d;
+  margin-right: 10px;
+}
+
+select {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  outline: none;
+  background-color: #6f8cb7;
+  color: black;
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+
+select:hover {
+  border-color: #0056b3;
+  background-color: black;
+  color: black;
+}
+
+/* Error and loading messages */
+.error {
+  color: #ff4d4d;
+  font-size: 18px;
+  margin-top: 15px;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.loading {
+  color: #ff9900;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+/* Bar chart container */
+#vertical-bar-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 380px;
+  padding: 20px;
+  background-color: #32475b;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#vertical-bar-chart:hover {
+  transform: scale(1.05);
+  background-color: #2a3c4e;
+}
+
+/* Individual bar styling */
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar {
+  width: 45px;
+  background: linear-gradient(45deg, #42a5f5, #66bb6a, #ffeb3b);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.4s ease, transform 0.4s ease;
+}
+
+.bar:hover {
+  background: linear-gradient(45deg, #ffca28, #ef5350, #43a047);
+  transform: scale(1.1);
+}
+
+.label {
+  margin-top: 14px;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+}
+
+/* Bar animations */
+@keyframes growBar {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.bar {
+  animation: growBar 1s ease-in-out;
+}
+
+/* Add hover effect for the entire container */
+.chart-container:hover .bar {
+  background: linear-gradient(45deg, #ffeb3b, #42a5f5, #ff6f00);
+  transition: all 0.5s ease;
+}
+
+/* Media Query for Responsive design */
+@media (max-width: 768px) {
+  #vertical-bar-chart {
+    height: 300px;
+  }
+
+  .bar {
+    width: 35px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-emphasis-color: black;
+  }
+}
